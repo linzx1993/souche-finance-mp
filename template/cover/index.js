@@ -1,8 +1,8 @@
 /* eslint-disable */
 import Util from '../util';
 import config from '@/config/host';
-let domain = process.env.<%- data.project.domain || 'DOMAIN' %>;
-let instance = Util.finance(config.host[domain]);
+
+let instance = Util.finance(config.host.<%- data.project.domain || 'DOMAIN' %>);
 
 <% _.forEach(data.list, function(o){ %> /** <%- o.summary %> */
 export function <%- $$.convertUrl(o.path) %> (opts) {
